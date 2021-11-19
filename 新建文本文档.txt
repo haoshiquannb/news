@@ -1,0 +1,71 @@
+下载地址：https://gitforwindows.org/
+安装步骤：选择安装目录后->选择Use git from git bash only ->其它默认
+	配置path环境变量
+	
+配置git：用户名:git config --global user.name "hsq"
+	邮箱：git config --global user.email "125@qq.com"
+	右键桌面->git bash
+查看配置的git用户与邮箱：C:\Users\hsq\.gitconfig
+
+搭建git服务器（远程仓库）：同意托管网站（https：//gitHub.com）
+
+本地和远程仓库之间免密登录交互，可以配置ssh解决：现在本地配置，发送给远程
+					命令：ssh-keygen -t rsa -C 125@qq.com 一直回车确认
+					查看：C:\Users\hsq\ssh (一个私密，一个对外发送的)
+github上要添加密钥！！！！
+
+本地项目关联远程项目
+git remote add oragin git@github.com:haoshiquannb/news.git（远程项目标识符）
+
+本地创建git项目：在项目根目录 右键->git bash ->命令：初始化：git init
+
+第一次发布项目（本地->远程）
+	git add .          //文件->暂存区
+	git commit -m "注释内容"   //暂存区—>本地分支（默认master）
+	git push -u origin master
+
+第一次下载项目（远程->本地）
+	git clone git@github.com:yanqun/mygitremote.git
+
+提交（本地->远程）
+	(当前工作目录 右键->git bash)
+	git add .
+	git commit -m "提交到分支"
+	git push origin master
+
+更新（远程->本地）
+	git pull
+
+分布式版本管理流程：本地项目->暂存区（add）->本地分支master（commit）->推送到远程分支master（push）
+								远程分支拉取到本地分支（pull）
+
+IDE环境：
+	菜单属性：Team->Git（项目路径)
+		Team->Git->configuration-邮箱、用户名
+		General->network-ssh2选中生成的ssh目录
+	第一次发布：Team->share project
+			add to index（加入暂存区）
+			commit（提交到本地分支）
+			将项目推送到远程：右键Team——>remote->push
+
+	
+	提交：Team-add to index
+		Team-commit
+		 Team-push
+			commit时：commit and push：可以单独push某一个文件
+		 	  commit按钮：不能单独push某一个文件，只能push整个项目
+
+	第一次下载：import->clone->输入https/ssh唯一标识符
+
+	更新：Team->remote->pull
+
+git冲突的解决：
+	发现冲突：进入同步视图 右键->Team->synchronized...
+	解决：添加到本地暂存区：add to index
+		提交到本地分支：commit
+		更新远程分支内容到本地分支：pull
+		修改冲突：直接修改或merge Tool（修改后新的文件在本地，需要重新add to index+commit push）
+
+
+
+			

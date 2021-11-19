@@ -15,7 +15,7 @@
 github上要添加密钥！！！！
 
 本地项目关联远程项目
-git remote add oragin git@github.com:haoshiquannb/news.git（远程项目标识符）
+git remote add origin https://github.com/haoshiquannb/news.git（远程项目标识符）
 
 本地创建git项目：在项目根目录 右键->git bash ->命令：初始化：git init
 
